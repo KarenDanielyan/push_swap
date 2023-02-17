@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 20:17:52 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/02/16 20:34:45 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/02/17 22:51:22 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,9 @@ int		new_stack(void);
 /* Description: Push element into the stack. */
 void	push(t_stack *head);
 /* Description: Pop element from the stack. */
-void	pop(t_stack	*pop);
+void	pop(t_stack *head, t_stack	*to_pop);
+/* Description: Empty the stack and free allocated memory for it.*/
+void	free(t_stack *head);
 
 /* push_swap instructions */
 char	*swap_a(t_stack	*head);
