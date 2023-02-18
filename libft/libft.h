@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 22:21:00 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/02/10 18:27:00 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/02/19 02:56:36 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stddef.h>
-# include <string.h> /* NOTE: On Mac "bsd/" is not neccesary. */
+# include <bsd/string.h> /* NOTE: On Mac "bsd/" is not neccesary. */
 # include <limits.h>
+# include <errno.h>
 
 typedef struct s_list
 {
@@ -52,6 +53,7 @@ int		ft_toupper(int c);
 int		ft_atoi(const char *str);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_strncmp(const char *s1, const char *s2, size_t size);
+long	ft_atol(const char *s);
 
 /* Additional Functions */
 void	ft_putchar_fd(char c, int fd);
