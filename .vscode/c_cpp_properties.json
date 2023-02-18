@@ -3,12 +3,12 @@
         {
             "name": "linux-gcc-x64",
             "includePath": [
-                "${workspaceFolder}/**",
+                "${workspaceFolder}/include",
                 "${workspaceFolder}/libft",
                 "${workspaceFolder}/libft/**",
                 "${workspaceFolder}/printf",
                 "${workspaceFolder}/printf/**",
-                "${workspaceFolder}/printf/include"
+                "${workspaceFolder}/printf/include/**"
             ],
             "compilerPath": "/usr/bin/gcc",
             "cStandard": "c99",
