@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 20:17:52 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/02/18 14:34:31 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/02/18 14:35:56 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int		stack_size(t_stack *head);
 /* Description: Push element into the stack. */
 void	push(t_stack *head);
 /* Description: Pop element from the stack. */
-void	pop(t_stack *head, t_stack	*to_pop);
+void	pop(t_stack *head);
 /* Description: Empty the stack and free allocated memory for it.*/
 void	stack_clear(t_stack **head);
 
