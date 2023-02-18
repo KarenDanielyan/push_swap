@@ -16,7 +16,7 @@ CC 			= 	cc
 
 RM			=	rm -rf
 
-CFLAGS		=	-Wall -Wextra -Werror
+CFLAGS		=	-g -Wall -Wextra -Werror
 
 LFLAGS		=	-L./libft -lft -L./printf -lftprintf
 

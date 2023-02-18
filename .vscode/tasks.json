@@ -4,10 +4,10 @@
             "type": "shell",
             "label": "Build Library",
             "linux":{
-                "command": "${workspaceFolder}/libft/build.sh"
+                "command": "make -C ./libft"
             },
             "options": {
-                "cwd": "${workspaceFolder}/libft"
+                "cwd": "${workspaceFolder}"
             },
             "problemMatcher": [
                 "$gcc"
@@ -16,12 +16,12 @@
         },
         {
             "type": "shell",
-            "label": "Build Testbed",
+            "label": "Build Printf",
             "linux": {
-                "command": "${workspaceFolder}/test/build.sh"
+                "command": "make -C ./printf"
             },
             "options": {
-                "cwd": "${workspaceFolder}/test"
+                "cwd": "${workspaceFolder}"
             },
             "problemMatcher": [
                 "$gcc"
@@ -32,7 +32,7 @@
             "type": "shell",
             "label": "Build Everything",
             "linux": {
-                "command": "${workspaceFolder}/build-all.sh",
+                "command": "make",
             },
             "options": {
                 "cwd": "${workspaceFolder}"

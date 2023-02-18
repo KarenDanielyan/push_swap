@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 14:05:08 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/02/18 14:34:55 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/02/19 01:47:34 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_stack	*new_stack(void)
 	new = (t_stack *)malloc(sizeof(t_stack));
 	if (!new)
 	{
-		write(STDERR_FILENO, ERROR_MSG_MEM, ft_strlen(ERROR_MSG_MEM));
+		write(STDERR_FILENO, ERROR_MSG, ft_strlen(ERROR_MSG));
 		return (NULL);
 	}
 	new->value = 0;
@@ -47,18 +47,19 @@ int	stack_size(t_stack	*head)
 	return (size);
 }
 
-void	push(t_stack *head)
+void	push(t_stack **head, int value)
 {
 	t_stack	*to_push;
 
 	to_push = (t_stack *)malloc(sizeof(t_stack));
 	if (to_push)
 	{
-		to_push->next = head;
-		head = to_push;
+		to_push->value = value;
+		to_push->next = *head;
+		*head = to_push;
 	}
 	else
-		write(STDERR_FILENO, ERROR_MSG_MEM, ft_strlen(ERROR_MSG_MEM));
+		ft_putstr_fd(ERROR_MSG, STDOUT_FILENO);
 }
 
 void	pop(t_stack *head)
