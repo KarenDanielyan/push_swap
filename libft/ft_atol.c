@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 02:37:52 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/02/19 02:57:03 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/02/19 14:44:54 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static short	is_whitespace(const char *chr)
 /*
 *	Reference: <stdlib.h>
 *
-*	Description: ft_strtol() converts the inital portion of the string
+*	Description: ft_atol() converts the inital portion of the string
 *	pointed by *str to long.
 *
 *	Return Value: The converted value or 0 on error.

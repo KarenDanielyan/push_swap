@@ -1,47 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   stack_2.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/15 15:18:15 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/02/19 15:26:06 by kdaniely         ###   ########.fr       */
+/*   Created: 2023/02/19 13:41:29 by kdaniely          #+#    #+#             */
+/*   Updated: 2023/02/19 14:12:46 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-#include <ft_printf.h>
-#include "push_swap.h"
+#include "stack.h"
 
-static void print_stack(t_stack *head)
+t_stack	*stack_find(t_stack *head, int key)
 {
-	int i;
-
 	while (head)
 	{
-		i = head->value;
-		ft_printf("%d\n", i);
+		if (head->value == key)
+			return (head);
 		head = head->next;
 	}
-}
-
-int	main(int ac, char **av)
-{
-	int		rv;
-	t_stack	*head;
-	int		sig;
-
-	head = NULL;
-	sig = parse(ac, av, &head);
-	rv = 0;
-	if (sig == -1)
-	{
-		ft_putstr_fd(ERROR_MSG, STDERR_FILENO);
-		rv = -1;
-	}
-	else
-		// execute push_swap sorting
-	stack_clear(&head);
-	return (rv);
+	return (NULL);
 }

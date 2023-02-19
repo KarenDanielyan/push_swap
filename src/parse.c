@@ -6,12 +6,11 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 20:52:10 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/02/19 02:04:18 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/02/19 14:50:16 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
-#include <ft_printf.h>
 #include "push_swap.h"
 
 void	free_2d(char **str)
@@ -55,19 +54,26 @@ static int	ft_strlen_2d(char **s)
 
 static int	push_args(char **args, t_stack **head)
 {
-	int	len;
-	int	sig;
+	int		len;
+	int		sig;
+	long	temp;
 
 	len = ft_strlen_2d(args);
 	sig = 1;
-	while (len--)
+	while (len-- && sig == 1)
 	{
 		if (!is_number(*(args + len)))
 		{
 			sig = -1;
 			break ;
 		}
-		push(head, ft_atoi(*(args + len)));
+		temp = ft_atol(*(args + len));
+		if ((temp > INT_MAX || temp < INT_MIN) || stack_find(*head, temp))
+		{
+			sig = -1;
+			break ;
+		}
+		sig = push(head, (int)temp);
 	}
 	return (sig);
 }
@@ -89,7 +95,5 @@ int	parse(int ac, char **av, t_stack **head_a)
 			break ;
 		ac--;
 	}
-	if (ac == 1)
-		sig = -1;
 	return (sig);
 }

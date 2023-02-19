@@ -6,13 +6,12 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 14:05:08 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/02/19 01:47:34 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/02/19 14:48:31 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stack.h"
 #include <libft.h>
-#include <ft_printf.h>
 
 t_stack	*new_stack(void)
 {
@@ -21,7 +20,7 @@ t_stack	*new_stack(void)
 	new = (t_stack *)malloc(sizeof(t_stack));
 	if (!new)
 	{
-		write(STDERR_FILENO, ERROR_MSG, ft_strlen(ERROR_MSG));
+		ft_putstr_fd(ERROR_MSG, STDERR_FILENO);
 		return (NULL);
 	}
 	new->value = 0;
@@ -47,7 +46,7 @@ int	stack_size(t_stack	*head)
 	return (size);
 }
 
-void	push(t_stack **head, int value)
+int	push(t_stack **head, int value)
 {
 	t_stack	*to_push;
 
@@ -57,9 +56,9 @@ void	push(t_stack **head, int value)
 		to_push->value = value;
 		to_push->next = *head;
 		*head = to_push;
+		return (1);
 	}
-	else
-		ft_putstr_fd(ERROR_MSG, STDOUT_FILENO);
+	return (-1);
 }
 
 void	pop(t_stack *head)
