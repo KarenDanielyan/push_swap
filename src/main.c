@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 15:18:15 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/02/19 15:26:06 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/02/20 15:12:40 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	main(int ac, char **av)
 		rv = -1;
 	}
 	else
-		// execute push_swap sorting
+		print_stack(head); // execute push_swap sorting instead of print
 	stack_clear(&head);
 	return (rv);
 }

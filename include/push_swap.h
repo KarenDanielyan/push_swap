@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 20:55:37 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/02/20 14:37:19 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/02/20 14:57:39 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	rotate_b(t_stack **head);
 void	rrotate_a(t_stack **head);
 void	rrotate_b(t_stack **head);
 void	swap_s(t_stack	**head_a, t_stack **head_b);
-void	push_a(t_stack	*head_a, t_stack **head_b);
+void	push_a(t_stack	**head_a, t_stack **head_b);
 void	push_b(t_stack	**head_a, t_stack **head_b);
 void	rotate_r(t_stack **head_a, t_stack **head_b);
 
