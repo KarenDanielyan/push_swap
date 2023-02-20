@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 15:18:15 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/02/20 15:12:40 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/02/20 20:25:36 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <ft_printf.h>
 #include "push_swap.h"
 
-static void print_stack(t_stack *head)
+/*static void print_stack(t_stack *head)
 {
 	int i;
 
@@ -24,7 +24,7 @@ static void print_stack(t_stack *head)
 		ft_printf("%d\n", i);
 		head = head->next;
 	}
-}
+}*/
 
 int	main(int ac, char **av)
 {
