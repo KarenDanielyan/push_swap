@@ -6,13 +6,12 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 19:15:38 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/02/19 02:03:16 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/02/20 14:38:32 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stack.h"
+#include "push_swap.h"
 #include <libft.h>
-#include <ft_printf.h>
 
 static int	swap(t_stack **head)
 {
@@ -32,14 +31,20 @@ static int	swap(t_stack **head)
 
 void	swap_a(t_stack	**head)
 {
-	if (swap(head))
-		ft_putstr_fd("sa\n", STDOUT_FILENO);
+	if (!PRETTY_PRINT)
+	{
+		if (swap(head))
+			ft_putstr_fd("sa\n", STDOUT_FILENO);
+	}
 }
 
 void	swap_b(t_stack **head)
 {
-	if (swap(head))
-		ft_putstr_fd("sb\n", STDOUT_FILENO);
+	if (!PRETTY_PRINT)
+	{
+		if (swap(head))
+			ft_putstr_fd("sb\n", STDOUT_FILENO);
+	}
 }
 
 void	swap_s(t_stack **head_a, t_stack **head_b)
