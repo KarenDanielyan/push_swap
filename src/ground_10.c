@@ -1,39 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ground_3.c                                         :+:      :+:    :+:   */
+/*   ground_10.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/22 18:34:55 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/02/22 19:53:27 by kdaniely         ###   ########.fr       */
+/*   Created: 2023/02/22 19:53:03 by kdaniely          #+#    #+#             */
+/*   Updated: 2023/02/22 19:54:42 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <libft.h>
-#include <ft_printf.h>
 
-void	ground_2(t_stack **head)
+static void		to_push_a(t_stack **head_a, t_stack **head_b, t_stack *to_push)
 {
-	if ((*head)->value > (*head)->next->value)
-		swap_a(head);
+	while ((*head_a)->value != to_push->value)
+		rotate_a(head_a);
+	push_a(head_a, head_b);
 }
 
-void	ground_3(t_stack **head)
+static t_stack	*min_node(t_stack *head)
 {
-	t_stack	*hd;
-	t_stack	*second;
-	t_stack	*last;
+	t_stack	*min;
 
-	hd = *head;
-	second = (*head)->next;
-	last = stack_last(*head);
-	if ((hd->value > second->value) &&
-		(hd->value > last->value))
-		rotate_a(head);	
-	else if ((second->value > hd->value) &&
-		(second->value > last->value))
-		rrotate_a(head);
-	ground_2(head);
+	min = head;
+	while (head)
+	{
+		if (min->value < head->value)
+			min = head;
+		head = head->next;
+	}
+	return (min);
+}
+
+void	ground_10(t_stack **head_a, t_stack **head_b)
+{
+	
 }
