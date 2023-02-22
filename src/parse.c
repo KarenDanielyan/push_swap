@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 20:52:10 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/02/19 14:50:16 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/02/22 14:35:57 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static int	is_number(const char *s)
 		s++;
 	while (*s)
 	{
-		if (*s < '0' && *s > '9')
+		if (*s < '0' || *s > '9')
 			return (0);
 		s++;
 	}

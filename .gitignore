@@ -4,3 +4,4 @@ libft/*.o
 libft/libft.a
 printf/libftprintf.a
 printf/build
+checker_Mac

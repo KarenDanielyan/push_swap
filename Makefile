@@ -23,7 +23,7 @@ LFLAGS		=	-L./libft -lft -L./printf -lftprintf
 IFLAGS		=	-I./include -I./libft -I./printf/include
 
 $(BUILD)/%.o: $(SRC)/%.c $(DEP)
-				@$(CC) $(CFLAGS) $(IFLAGS) $(LFLAGS) -c $< -o $@
+				@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
 
 all:		$(NAME)
 

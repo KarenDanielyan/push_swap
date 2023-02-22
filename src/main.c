@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 15:18:15 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/02/20 20:25:36 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/02/22 18:59:58 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 #include <ft_printf.h>
 #include "push_swap.h"
 
-/*static void print_stack(t_stack *head)
-{
-	int i;
+// static void print_stack(t_stack *head)
+// {
+// 	int i;
 
-	while (head)
-	{
-		i = head->value;
-		ft_printf("%d\n", i);
-		head = head->next;
-	}
-}*/
+// 	while (head)
+// 	{
+// 		i = head->value;
+// 		ft_printf("%d\n", i);
+// 		head = head->next;
+// 	}
+// }
 
 int	main(int ac, char **av)
 {
@@ -41,7 +41,10 @@ int	main(int ac, char **av)
 		rv = -1;
 	}
 	else
-		print_stack(head); // execute push_swap sorting instead of print
+		ground_3(&head);
+	//print_stack(head);
+		//print_stack(head); // execute push_swap sorting instead of print
 	stack_clear(&head);
+	//system("leaks push_swap");
 	return (rv);
 }

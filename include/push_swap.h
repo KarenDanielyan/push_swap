@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 20:55:37 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/02/20 15:19:09 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/02/22 18:52:03 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,9 @@ void	push_a(t_stack	**head_a, t_stack **head_b);
 void	push_b(t_stack	**head_a, t_stack **head_b);
 void	rotate_r(t_stack **head_a, t_stack **head_b);
 void	rrotate_r(t_stack **head_a, t_stack **head_b);
+
+/* sorting instructions */
+void	ground_2(t_stack **head);
+void	ground_3(t_stack **head);
 
 #endif
