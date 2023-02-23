@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 20:17:52 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/02/20 15:40:52 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/02/23 13:54:11 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,11 @@ t_stack	*stack_last(t_stack	*head);
 *	Return Value: Pointer to the node or NULL if there is none.
 */
 t_stack	*stack_find_ind(t_stack *head, int index);
+/*
+*	Description: Return index of the node in the stack.
+*
+*	Return Value: Index number or zero if stack is empty.
+*/
+int	stack_get_ind(t_stack *head, t_stack *to_get);
 
 #endif

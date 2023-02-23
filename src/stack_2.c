@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 13:41:29 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/02/22 19:20:15 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/02/23 14:05:01 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	stack_get_ind(t_stack *head, t_stack *to_get)
 	int	i;
 
 	i = 0;
-	if (head, to_get)
+	if (head && to_get)
 	{
 		while (head && (head->value != to_get->value))
 		{
