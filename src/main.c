@@ -6,13 +6,14 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 15:18:15 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/02/23 15:03:26 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/02/23 15:42:20 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-#include <ft_printf.h>
+#include "sort.h"
 #include "push_swap.h"
+#include <ft_printf.h>
+#include <libft.h>
 
 // static void print_stack(t_stack *head)
 // {
@@ -43,7 +44,7 @@ int	main(int ac, char **av)
 		rv = -1;
 	}
 	else if (ac != 1)
-		ground_10(&head_a, &head_b);
+		sort(&head_a, &head_b);
 	stack_clear(&head_a);
 	return (rv);
 }

@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 14:05:08 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/02/19 14:48:31 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/02/23 19:04:04 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ t_stack	*new_stack(void)
 	}
 	new->value = 0;
 	new->next = NULL;
+	new->previous = NULL;
 	return (new);
 }
 
@@ -53,9 +54,11 @@ int	push(t_stack **head, int value)
 	to_push = (t_stack *)malloc(sizeof(t_stack));
 	if (to_push)
 	{
+		to_push->previous = NULL;
 		to_push->value = value;
 		to_push->next = *head;
-		*head = to_push;
+		(*head)->previous = to_push;
+		(*head) = to_push;
 		return (1);
 	}
 	return (-1);
@@ -70,6 +73,7 @@ void	pop(t_stack *head)
 		to_pop = head;
 		head = head->next;
 		free(to_pop);
+		head->previous = NULL;
 	}
 }
 
