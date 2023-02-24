@@ -16,7 +16,7 @@ CC 			= 	cc
 
 RM			=	rm -rf
 
-CFLAGS		=	-g -Wall -Wextra -Werror
+CFLAGS		=	-g #-Wall -Wextra -Werror
 
 LFLAGS		=	-L./libft -lft -L./printf -lftprintf
 
@@ -32,7 +32,7 @@ $(BUILD):
 
 $(NAME):	$(BUILD) $(OBJS)
 				@echo	"Building ..."
-				@$(MAKE) -C libft
+				@$(MAKE) bonus -C libft
 				@$(MAKE) -C printf
 				@$(CC) $(CFAGS) $(OBJS) $(IFLAGS) $(LFLAGS) -o $(NAME)
 				@echo	"Build Successfull."

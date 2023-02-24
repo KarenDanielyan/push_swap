@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 14:57:05 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/02/20 15:09:37 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/02/24 16:30:51 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,11 @@ static	int ps_push(t_stack **head_1, t_stack **head_2)
 	{
 		tmp = *head_2;
 		*head_2 = (*head_2)->next;
+		if (*head_2)
+			(*head_2)->previous = NULL;
 		tmp->next = *head_1;
+		if (*head_1)
+			(*head_1)->previous = tmp;
 		*head_1 = tmp;
 	}
 	return (rv);

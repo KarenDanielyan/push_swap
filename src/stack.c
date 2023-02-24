@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 14:05:08 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/02/23 19:04:04 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/02/24 15:56:11 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,8 @@ int	push(t_stack **head, int value)
 		to_push->previous = NULL;
 		to_push->value = value;
 		to_push->next = *head;
-		(*head)->previous = to_push;
+		if (*head)
+			(*head)->previous = to_push;
 		(*head) = to_push;
 		return (1);
 	}

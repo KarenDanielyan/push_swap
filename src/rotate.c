@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 15:19:37 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/02/20 16:03:39 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/02/24 16:20:34 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,12 @@ static int	rotate(t_stack **head)
 	{
 		last = stack_last(*head);
 		last->next = *head;
+		(*head)->previous = last;
 		*head = (*head)->next;
-		last->next->next = NULL;
+		(*head)->previous->next = NULL;
+		(*head)->previous = NULL;
 	}
+
 	return (rv);
 }
 

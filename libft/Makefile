@@ -16,7 +16,7 @@ OBJS_B		=	$(BONUS:.c=.o)
 
 RM			=	rm -f
 
-CFLAGS		=	-Wall -Wextra -Werror
+CFLAGS		=	-g3 -Wall -Wextra -Werror
 
 AR			=	ar rcs
 
@@ -28,8 +28,8 @@ all:		$(NAME)
 $(NAME):	$(OBJS)
 				@$(AR) $(NAME) $(OBJS)
 
-bonus:		$(OBJS_B)
-				$(AR) $(NAME) $(OBJS_B)
+bonus:		$(OBJS) $(OBJS_B)
+				$(AR) $(NAME) $(OBJS) $(OBJS_B)
 
 clean:		
 				@$(RM) $(OBJS) $(OBJS_B)

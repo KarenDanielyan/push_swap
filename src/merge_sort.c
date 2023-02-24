@@ -5,78 +5,46 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/23 15:40:24 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/02/23 23:10:59 by kdaniely         ###   ########.fr       */
+/*   Created: 2023/02/24 15:31:08 by kdaniely          #+#    #+#             */
+/*   Updated: 2023/02/24 22:49:49 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vector.h"
 #include "sort.h"
-#include "push_swap.h"
 
-static void	ascend(t_stack **head_a, t_stack **head_b)
+static void ascend(t_stack **head_a, t_stack **head_b)
 {
-	t_stack *current_max;
+	t_stack	*to_push;
 
-	if (stack_size(*head_b) == 0)
-		to_push_b(head_a, head_b, get_max(*head_a));
-	current_max = get_max(*head_a);
-	while (current_max->value > (*head_b)->value)
+	to_push = get_plausible_max(*head_a, *head_b);
+	while (to_push)
 	{
-			to_push_b(head_a, head_b, current_max);
-			current_max = get_max(*head_a);
-	}	
-}
-
-static void	descend(t_stack **head_a, t_stack **head_b)
-{
-	t_stack	*current_min;
-	
-	if (stack_size(*head_b) == 0)
-		to_push_b(head_a, head_b, get_min(*head_a));
-	current_min = get_min(*head_a);
-	while (current_min->value < (*head_b)->value)
-	{
-		to_push_b(head_a, head_b, current_min);
-		current_min = get_min(*head_a);
+		to_push_b(head_a, head_b, to_push);
+		to_push = get_plausible_max(*head_a, *head_b);
 	}
 }
 
-static void directional_merge(t_stack **head_a, t_stack **head_b)
+static void descend(t_stack **head_a, t_stack **head_b)
 {
-	t_stack 	*from_head;
-	t_stack 	*from_end;
-	t_normal	normal_head;
-	t_normal	normal_end;
+	t_stack	*to_push;
 
-	from_head = *head_b;
-	from_end = stack_last(*head_b);
-	
-}
-
-static void	merge(t_stack **head_a, t_stack **head_b)
-{
-	t_stack	*from_end;
-	t_stack	*from_head;
-
-
-	from_head = *head_a;
-	from_end = stack_last(*head_b);
-	while (stack_size(*head_b) != 0)
+	to_push = get_plausible_min(*head_a, *head_b);
+	while (to_push)
 	{
-
+		to_push_b(head_a, head_b, to_push);
+		to_push = get_plausible_min(*head_a, *head_b);
 	}
 }
 
 void	merge_sort(t_stack **head_a, t_stack **head_b)
 {
-	while (!is_sorted(head_a) && stack_size(*head_b) != 0)
+	while (!is_sorted(*head_a))
 	{
 		while (stack_size(*head_a) != 0)
 		{
 			ascend(head_a, head_b);
 			descend(head_a, head_b);
 		}
-		merge(head_a, head_b);
+		//merge(head_a, head_b);
 	}
 }

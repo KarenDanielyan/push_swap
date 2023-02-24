@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 16:05:08 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/02/20 20:18:06 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/02/24 20:50:22 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,11 @@ static int	rrotate(t_stack **head)
 	if (rv)
 	{
 		last = stack_last(*head);
-		before_last = stack_find_ind(*head, (stack_size(*head) - 1 - 1));
 		last->next = *head;
-		before_last->next = NULL;
 		*head = last;
+		(*head)->previous->next = NULL;
+		(*head)->previous = NULL;
+		(*head)->next->previous = (*head);
 	}
 	return (rv);
 }
