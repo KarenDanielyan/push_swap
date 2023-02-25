@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 18:47:02 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/02/24 22:38:16 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/02/25 14:06:59 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,13 +79,13 @@ t_stack	*get_plausible_max(t_stack *head_a, t_stack *head_b)
 		while (i < 3)
 		{
 			plausible_max = get_min(values, exclude);
-			if (!head_b || !plausible_max || (plausible_max->value > head_b->value))
+			if (!head_b || !plausible_max
+				|| (plausible_max->value > head_b->value))
 				break ;
 			ft_lstadd_back(&exclude, ft_lstnew(plausible_max));
 		}
 	}
-	if (is_present(exclude, plausible_max))
-		return (NULL);
+	ft_lstclear(&exclude, NULL);
 	return (plausible_max);
 }
 
@@ -107,12 +107,12 @@ t_stack	*get_plausible_min(t_stack *head_a, t_stack *head_b)
 		while (i < 3)
 		{
 			plausible_min = get_max(values, exclude);
-			if (!head_b || !plausible_min || (plausible_min->value < head_b->value))
+			if (!head_b || !plausible_min
+				|| (plausible_min->value < head_b->value))
 				break ;
 			ft_lstadd_back(&exclude, ft_lstnew(plausible_min));
 		}
 	}
-	if (is_present(exclude, plausible_min))
-		return (NULL);
+	ft_lstclear(&exclude, NULL);
 	return (plausible_min);
 }

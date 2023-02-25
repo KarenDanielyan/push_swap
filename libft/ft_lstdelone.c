@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:55:51 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/01/21 16:20:38 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/02/25 14:10:37 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,10 @@
 */
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	if (lst && del)
+	if (lst)
 	{
-		(*del)(lst->content);
+		if (del)
+			del(lst->content);
 		free(lst);
 	}
 }

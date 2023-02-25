@@ -1,37 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   vector_1.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/18 14:26:31 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/02/25 14:10:06 by kdaniely         ###   ########.fr       */
+/*   Created: 2023/02/25 12:44:10 by kdaniely          #+#    #+#             */
+/*   Updated: 2023/02/25 13:26:06 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "vector.h"
 
-/*
-*	Reference: DNE
-*
-*	Description: Deletes and frees the given node and every
-*	successor of that node, using the function ’del’ and free().
-*	Finally, the pointer to the list must be set to NULL.
-*
-*	Return Value: None
-*/
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+t_direction	get_direction_from_head(t_stack *head)
 {
-	t_list	*a;
-
-	if (lst)
+	if (head)
 	{
-		while (*lst)
-		{
-			a = (*lst)->next;
-			ft_lstdelone(*lst, del);
-			*lst = a;
-		}
+		if (head->value < head->next->value)
+			return (ASCENDING);
+		return (DESCENDING);
 	}
+	return (EMPTY);
+}
+
+t_direction	get_direction_from_end(t_stack *end)
+{
+	if (end)
+	{
+		if (end->value < end->previous->value)
+			return (ASCENDING);
+		return (DESCENDING);
+	}
+	return (EMPTY);
 }

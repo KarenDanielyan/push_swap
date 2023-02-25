@@ -16,7 +16,7 @@ CC 			= 	cc
 
 RM			=	rm -rf
 
-CFLAGS		=	-g #-Wall -Wextra -Werror
+CFLAGS		=	-g3 -ggdb -fsanitize=address #-Wall -Wextra -Werror
 
 LFLAGS		=	-L./libft -lft -L./printf -lftprintf
 
@@ -34,7 +34,7 @@ $(NAME):	$(BUILD) $(OBJS)
 				@echo	"Building ..."
 				@$(MAKE) bonus -C libft
 				@$(MAKE) -C printf
-				@$(CC) $(CFAGS) $(OBJS) $(IFLAGS) $(LFLAGS) -o $(NAME)
+				@$(CC) $(CFLAGS) $(OBJS) $(IFLAGS) $(LFLAGS) -o $(NAME)
 				@echo	"Build Successfull."
 clean:
 				@echo "Cleaning Build..."

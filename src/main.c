@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 15:18:15 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/02/24 22:00:47 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/02/25 14:23:22 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,7 @@ int	main(int ac, char **av)
 	else if (ac != 1)
 		sort(&head_a, &head_b);
 	stack_clear(&head_a);
+	stack_clear(&head_b);
+	//system("leaks push_swap");
 	return (rv);
 }
