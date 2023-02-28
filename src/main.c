@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 15:18:15 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/02/28 17:43:40 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/02/28 18:07:27 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,9 @@ int	main(int ac, char **av)
 	}
 	else if (ac != 1)
 		sort(&head_a, &head_b);
-	print_stack(head_a);
+	//print_stack(head_a);
 	stack_clear(&head_a);
 	stack_clear(&head_b);
-	system("leaks push_swap");
+	//system("leaks push_swap");
 	return (rv);
 }
