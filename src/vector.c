@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 12:40:51 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/02/25 13:23:19 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/02/28 17:43:01 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	get_vector_from_head(t_stack *head, t_vector *vector)
 
 	vector->start = head;
 	direction = get_direction_from_head(head);
-	while (head && (get_direction_from_head(head) == direction))
+	while (head->next && (get_direction_from_head(head) == direction))
 		head = head->next;
 	vector->end = head;
 	vector->direction = direction;
@@ -30,7 +30,7 @@ void	get_vector_from_end(t_stack	*end, t_vector *vector)
 
 	vector->start = end;
 	direction = get_direction_from_end(end);
-	while (end && (get_direction_from_end(end) == direction))
+	while (end->previous && (get_direction_from_end(end) == direction))
 		end = end->previous;
 	vector->end = end;
 	vector->direction = direction;

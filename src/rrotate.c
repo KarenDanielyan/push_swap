@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 16:05:08 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/02/24 20:50:22 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/02/28 15:07:43 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ static int	rrotate(t_stack **head)
 {
 	int		rv;
 	t_stack	*last;
-	t_stack	*before_last;
 
 	rv = (head && *head && (*head)->next);
 	if (rv)
