@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 15:22:30 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/02/25 14:39:13 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/01 20:16:44 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "sort.h"
 #include <libft.h>
 
-int		is_sorted(t_stack *head)
+int	is_sorted(t_stack *head)
 {
 	while (head->next)
 	{
@@ -27,8 +27,8 @@ int		is_sorted(t_stack *head)
 
 void	sort(t_stack **head_a, t_stack **head_b)
 {
-	//if (stack_size(*head_a) <= 12)
-	//	ground_10(head_a, head_b);
-	//else
+	if (stack_size(*head_a) <= 12)
+		ground_10(head_a, head_b);
+	else
 		merge_sort(head_a, head_b);
 }

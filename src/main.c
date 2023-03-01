@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 15:18:15 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/02/28 18:07:27 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/01 20:09:51 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 #include <ft_printf.h>
 #include <libft.h>
 
-static void print_stack(t_stack *head)
-{
-	int i;
+// static void print_stack(t_stack *head)
+// {
+// 	int i;
 
-	while (head)
-	{
-		i = head->value;
-		ft_printf("%d\n", i);
-		head = head->next;
-	}
-}
+// 	while (head)
+// 	{
+// 		i = head->value;
+// 		ft_printf("%d\n", i);
+// 		head = head->next;
+// 	}
+// }
 
 int	main(int ac, char **av)
 {
@@ -45,9 +45,7 @@ int	main(int ac, char **av)
 	}
 	else if (ac != 1)
 		sort(&head_a, &head_b);
-	//print_stack(head_a);
 	stack_clear(&head_a);
 	stack_clear(&head_b);
-	//system("leaks push_swap");
 	return (rv);
 }

@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 14:57:05 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/02/24 16:30:51 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/01 20:14:07 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 /*	Description: Pushes node from stack head_2 into stack head_1.
 	Do nothing if head_2 is empty. */
-static	int ps_push(t_stack **head_1, t_stack **head_2)
+static	int	ps_push(t_stack **head_1, t_stack **head_2)
 {
 	int		rv;
 	t_stack	*tmp;

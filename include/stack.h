@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 20:17:52 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/02/23 18:52:51 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/01 20:18:09 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,6 @@ t_stack	*stack_find_ind(t_stack *head, int index);
 *
 *	Return Value: Index number or zero if stack is empty.
 */
-int	stack_get_ind(t_stack *head, t_stack *to_get);
+int		stack_get_ind(t_stack *head, t_stack *to_get);
 
 #endif

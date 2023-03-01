@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 15:31:08 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/02/28 17:23:10 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/01 20:16:40 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "vector.h"
 #include <libft.h>
 
-static void ascend(t_stack **head_a, t_stack **head_b)
+static void	ascend(t_stack **head_a, t_stack **head_b)
 {
 	t_stack	*to_push;
 
@@ -26,7 +26,7 @@ static void ascend(t_stack **head_a, t_stack **head_b)
 	}
 }
 
-static void descend(t_stack **head_a, t_stack **head_b)
+static void	descend(t_stack **head_a, t_stack **head_b)
 {
 	t_stack	*to_push;
 

@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 18:34:55 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/02/22 19:53:27 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/01 20:09:25 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ void	ground_3(t_stack **head)
 	hd = *head;
 	second = (*head)->next;
 	last = stack_last(*head);
-	if ((hd->value > second->value) &&
-		(hd->value > last->value))
-		rotate_a(head);	
-	else if ((second->value > hd->value) &&
-		(second->value > last->value))
+	if ((hd->value > second->value)
+		&& (hd->value > last->value))
+		rotate_a(head);
+	else if ((second->value > hd->value)
+		&& (second->value > last->value))
 		rrotate_a(head);
 	ground_2(head);
 }
