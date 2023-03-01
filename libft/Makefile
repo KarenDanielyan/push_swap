@@ -29,7 +29,7 @@ $(NAME):	$(OBJS)
 				@$(AR) $(NAME) $(OBJS)
 
 bonus:		$(OBJS) $(OBJS_B)
-				$(AR) $(NAME) $(OBJS) $(OBJS_B)
+				@$(AR) $(NAME) $(OBJS) $(OBJS_B)
 
 clean:		
 				@$(RM) $(OBJS) $(OBJS_B)

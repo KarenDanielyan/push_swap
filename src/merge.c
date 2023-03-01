@@ -6,50 +6,36 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 13:00:23 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/02/28 18:17:08 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/01 18:54:03 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sort.h"
-#include "vector.h"
 
-
-static void	ascending_merge(t_vector v_head, t_vector v_end, t_stack **head_a, t_stack **head_b)
+static int	ascending(int a, int b)
 {
-	while ((v_head.start != v_head.end) || (v_end.start != v_end.end)) // TODO: Do comparisons until u reaks a peak atleast in one vector.
-	{																   // TODO: after that cases will be handles by flush_leftovers().
-		if ((v_head.start != v_head.end)
-			&&(v_head.start->value < v_end.start->value))
-		{
-			v_head.start = v_head.start->next;
-			to_push_a(head_a, head_b, v_head.start->previous);
-		}
-		else if (v_end.start != v_head.end)
-		{
-			v_end.start = v_end.start->previous;
-			to_push_a(head_a, head_b, v_end.start->next);
-		}
-	}
-	flush_peaks(v_head, v_end, head_a, head_b); // TODO: flush leftovers
+	if (a < b)
+		return (1);
+	return (0);
+}
+
+static int	descending(int a, int b)
+{
+	if (a > b)
+		return (1);
+	return (0);
+}
+
+static void ascending_merge(t_vector v_head, t_vector v_end, t_stack **head_a, t_stack **head_b)
+{
+	while (v_head.start || v_end.start)
+		to_push_a(head_a, head_b, pick(&v_head, &v_end, &ascending));
 }
 
 static void	descending_merge(t_vector v_head, t_vector v_end, t_stack **head_a, t_stack **head_b)
 {
-	while ((v_head.start != v_head.end) || (v_end.start != v_end.end))
-	{
-		if ((v_head.start != v_head.end)
-			&&(v_head.start->value > v_end.start->value))
-		{
-			v_head.start = v_head.start->next;
-			to_push_a(head_a, head_b, v_head.start->previous);
-		}
-		else if (v_end.start != v_end.end)
-		{
-			v_end.start = v_end.start->previous;
-			to_push_a(head_a, head_b, v_end.start->next);
-		}
-	}
-	flush_peaks(v_head, v_end, head_a, head_b); // TODO: Instead of peaks flush leftovers.
+	while (v_head.start || v_end.start)
+		to_push_a(head_a, head_b, pick(&v_head, &v_end, &descending));
 }
 
 void	merge(t_stack **head_a, t_stack **head_b)
