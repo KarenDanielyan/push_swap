@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 20:52:10 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/02/22 14:35:57 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/04 15:52:05 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,5 +95,6 @@ int	parse(int ac, char **av, t_stack **head_a)
 			break ;
 		ac--;
 	}
+	to_index(head_a);
 	return (sig);
 }

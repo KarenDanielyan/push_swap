@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 20:17:52 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/01 20:18:09 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/04 14:40:31 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 typedef struct s_node
 {
 	int				value;
+	int				index;
 	struct s_node	*previous;
 	struct s_node	*next;
 }	t_stack;
