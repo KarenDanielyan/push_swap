@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 15:40:41 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/04 16:04:35 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/04 16:49:41 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ static int	*fill_index(t_stack *head_a)
 
 static void	flush_index(t_stack *head_a, int *index)
 {
-	int i;
-	
+	int	i;
+
 	while (head_a)
 	{
 		i = 0;
@@ -46,7 +46,7 @@ static void	flush_index(t_stack *head_a, int *index)
 void	to_index(t_stack **head_a)
 {
 	int	*index;
-	
+
 	index = fill_index(*head_a);
 	quick_sort(index, 0, (stack_size(*head_a) - 1));
 	flush_index(*head_a, index);

@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 19:53:03 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/01 20:09:39 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/04 16:55:43 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "sort.h"
 #include <libft.h>
 
-static t_stack	*min_node(t_stack *head)
+t_stack	*min_node(t_stack *head)
 {
 	t_stack	*min;
 

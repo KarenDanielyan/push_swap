@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 14:38:59 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/04 15:58:58 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/04 16:49:02 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 static void	swap(int *a, int *b)
 {
-	int tmp;
+	int	tmp;
 
 	tmp = *a;
 	*a = *b;
@@ -25,14 +25,13 @@ static void	swap(int *a, int *b)
 
 static int	partition(int *a, int l, int r)
 {
-	int i;
-	int j;
-	int v;
+	int	i;
+	int	j;
+	int	v;
 
 	i = l - 1;
 	j = r;
 	v = a[r];
-	
 	while (TRUE)
 	{
 		while (a[++i] < v)
@@ -40,10 +39,10 @@ static int	partition(int *a, int l, int r)
 		while (v < a[--j])
 		{
 			if (j == l)
-				break;
+				break ;
 		}
 		if (i >= j)
-			break;
+			break ;
 		swap(&a[i], &a[j]);
 	}	
 	swap(&a[i], &a[r]);
