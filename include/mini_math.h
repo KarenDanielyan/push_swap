@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   butterfly_sort.c                                   :+:      :+:    :+:   */
+/*   mini_math.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/04 17:02:55 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/05 15:13:37 by kdaniely         ###   ########.fr       */
+/*   Created: 2023/03/05 15:14:13 by kdaniely          #+#    #+#             */
+/*   Updated: 2023/03/05 15:26:15 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sort.h"
-#include "mini_math.h"
+#ifndef MINI_MATH_H
+#define MINI_MATH_H
 
-static	void shuffle(t_stack **head_a, t_stack **head_b)
-{
-	int	factor;
-	int	count;
+/* Regression for optimizing butterfly sort. */
+int	optimize(int len);
 
-	count = 0;
-	factor = optimize(stack_size(*head_a));
-}
-
-void	butterfly_sort(t_stack **head_a, t_stack **head_b)
-{
-	(void)head_a;
-	(void)head_b;
-}
+/* Helper Functions */
+int	ft_sqrt(int nb);
+int	log_two(int nb);
