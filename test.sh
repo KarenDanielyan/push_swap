@@ -1,7 +1,8 @@
 #!/bin/bash
 
-echo -n "Enter Input Numbers: "
-read args
+echo -n "Enter number of arguments: "
+read count
+args=$(jot -r $count 0 20000000)
 
 instruction_count=$(./push_swap $args | wc -l)
 test_ok=$(./push_swap $args | ./checker_Mac $args)

@@ -5,3 +5,4 @@ libft/libft.a
 printf/libftprintf.a
 printf/build
 checker_Mac
+checker

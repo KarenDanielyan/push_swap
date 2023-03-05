@@ -6,40 +6,25 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 15:26:32 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/05 15:27:25 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/05 17:27:20 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mini_math.h"
 
-int     ft_sqrt(int nb)
+int	ft_sqrt(int nb)
 {
-        unsigned long   i;
-        unsigned long   j;
-        unsigned long   root;
+	int	n;
 
-        if (nb <= 0)
-                return (0);
-        if (nb == 1)
-                return (1);
-        i = 0;
-        j = (unsigned long)nb;
-        while (i <= j)
-        {
-                root = (i + j) / 2;
-                if (root * root == (unsigned long)nb)
-                        return ((int)root);
-                else if (root * root < (unsigned long)nb)
-                        i = root + 1;
-                else
-                        j = root - 1;
-        }
-        return (0);
+	n = 2;
+	while (n * n < nb)
+		n ++;
+	return (n - 1);
 }
 
-int		log_two(int nb)
+int	log_two(int nb)
 {
-	int n;
+	int	n;
 
 	n = 0;
 	while (nb)
@@ -48,4 +33,9 @@ int		log_two(int nb)
 		n ++;
 	}
 	return (n);
+}
+
+int	optimize(int len)
+{
+	return (ft_sqrt(len) + log_two(len) - 1);
 }

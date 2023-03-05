@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 19:53:03 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/04 16:55:43 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/05 17:28:07 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,20 @@ t_stack	*min_node(t_stack *head)
 		head = head->next;
 	}
 	return (min);
+}
+
+t_stack	*max_node(t_stack *head)
+{
+	t_stack	*max;
+
+	max = head;
+	while (head)
+	{
+		if (max->value < head->value)
+			max = head;
+		head = head->next;
+	}
+	return (max);
 }
 
 void	ground_10(t_stack **head_a, t_stack **head_b)

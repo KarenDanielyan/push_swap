@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 15:29:53 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/04 17:01:40 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/05 15:59:36 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ int		is_sorted(t_stack *head);
 void	to_push_b(t_stack **head_a, t_stack **head_b, t_stack *to_push);
 void	to_push_a(t_stack **head_a, t_stack **head_b, t_stack *to_push);
 t_stack	*min_node(t_stack *head);
+t_stack	*max_node(t_stack *head);
 
 #endif

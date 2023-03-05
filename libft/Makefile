@@ -2,7 +2,7 @@ NAME		=	libft.a
 
 DEP			= 	libft.h Makefile
 
-SOURCES		=	$(shell find . -maxdepth 1 -name '*.c' ! -name 'ft_lst*.c')
+SOURCES		=	$(shell find . -maxdepth 1 -name '*.c')
 
 CC 			= 	cc
 
@@ -12,7 +12,9 @@ FILTER		=	$(filter-out $(BONUS), $(SOURCES))
 				
 OBJS		=	$(FILTER:.c=.o)
 
-OBJS_B		=	$(BONUS:.c=.o)
+OBJS_B		=	$(SOURCES:.c=.o)
+
+TO_BUILD	=	$(if $(filter bonus, $(MAKECMDGOALS)), $(OBJS_B), $(OBJS))
 
 RM			=	rm -f
 
@@ -25,11 +27,11 @@ AR			=	ar rcs
 
 all:		$(NAME)
 
-$(NAME):	$(OBJS)
-				@$(AR) $(NAME) $(OBJS)
+$(NAME):	$(TO_BUILD)
+				@$(AR) $(NAME) $(TO_BUILD)
+				@echo Done.
 
-bonus:		$(OBJS) $(OBJS_B)
-				@$(AR) $(NAME) $(OBJS) $(OBJS_B)
+bonus:		$(NAME)
 
 clean:		
 				@$(RM) $(OBJS) $(OBJS_B)
