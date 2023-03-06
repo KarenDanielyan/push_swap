@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 14:30:01 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/06 15:56:21 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/06 17:36:17 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,7 @@ char	*get_next_line(int fd);
 *	
 *	Return Value: Returns 1 on succesfull sort and -1 otherwise.
 */
-void		checker(t_stack **head_a, t_stack **head_b);
-
+void	checker(t_stack **head_a, t_stack **head_b);
 
 /* Helper Functions */
 void	execute_push(char *feed, t_stack **head_a, t_stack **head_b);
