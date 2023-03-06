@@ -6,12 +6,14 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 15:18:15 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/05 18:49:13 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/06 16:32:06 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "checker_bonus.h"
 #include <libft.h>
+#include <ft_printf.h>
 
 int	main(int ac, char **av)
 {
@@ -22,14 +24,23 @@ int	main(int ac, char **av)
 
 	head_a = NULL;
 	head_b = NULL;
-	sig = parse(ac, av, &head_a);
-	rv = 0;
-	if (sig == -1)
+	rv = 1;
+	if (ac != 1)
 	{
-		ft_putstr_fd(ERROR_MSG, STDERR_FILENO);
-		rv = -1;
+		sig = parse(ac, av, &head_a);
+		sleep(1);
+		if (sig == -1)
+		{
+			ft_putstr_fd(ERROR_MSG, STDERR_FILENO);
+			rv = -1;
+		}
+		else
+			checker(&head_a, &head_b);
+		sleep(1);
+		stack_clear(&head_a);
+		stack_clear(&head_b);
 	}
-	stack_clear(&head_a);
-	stack_clear(&head_b);
+	sleep(1);
+	system("leaks checker");
 	return (rv);
 }

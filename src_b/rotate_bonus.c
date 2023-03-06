@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   rotate_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 15:19:37 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/01 20:14:38 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/06 16:03:28 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,12 @@ static int	rotate(t_stack **head)
 
 void	rotate_a(t_stack **head)
 {
-	if (rotate(head) && !PRETTY_PRINT)
-		ft_putstr_fd("ra\n", STDOUT_FILENO);
+	rotate(head);
 }
 
 void	rotate_b(t_stack **head)
 {
-	if (rotate(head) && !PRETTY_PRINT)
-		ft_putstr_fd("rb\n", STDOUT_FILENO);
+	rotate(head);
 }
 
 void	rotate_r(t_stack **head_a, t_stack **head_b)

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   swap_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 19:15:38 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/02/20 15:10:17 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/06 16:07:32 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,12 @@ static int	swap(t_stack **head)
 
 void	swap_a(t_stack	**head)
 {
-	if (swap(head) && !PRETTY_PRINT)
-		ft_putstr_fd("sa\n", STDOUT_FILENO);
+	swap(head);
 }
 
 void	swap_b(t_stack **head)
 {
-	if (swap(head) && !PRETTY_PRINT)
-		ft_putstr_fd("sb\n", STDOUT_FILENO);
+	swap(head);
 }
 
 void	swap_s(t_stack **head_a, t_stack **head_b)

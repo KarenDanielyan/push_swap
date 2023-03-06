@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 15:18:15 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/05 18:21:34 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/06 16:42:12 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int	main(int ac, char **av)
 	head_b = NULL;
 	sig = parse(ac, av, &head_a);
 	rv = 0;
+	sleep(5);
 	if (sig == -1)
 	{
 		ft_putstr_fd(ERROR_MSG, STDERR_FILENO);
@@ -45,7 +46,10 @@ int	main(int ac, char **av)
 	}
 	else if (ac != 1)
 		sort(&head_a, &head_b);
+	sleep(1);
 	stack_clear(&head_a);
 	stack_clear(&head_b);
+	sleep(7);
+	system("leaks push_swap");
 	return (rv);
 }

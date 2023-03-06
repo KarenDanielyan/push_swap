@@ -24,7 +24,7 @@ CC 			= 	cc
 
 RM			=	rm -rf
 
-CFLAGS		=	-g3 -Wall -Wextra -Werror -ggdb -fsanitize=address
+CFLAGS		=	-g3 -Wall -Wextra -Werror
 
 LFLAGS		=	-L./libft -lft -L./printf -lftprintf
 

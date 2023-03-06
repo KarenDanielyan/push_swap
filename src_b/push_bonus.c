@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   push_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 14:57:05 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/01 20:14:07 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/06 16:06:49 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,10 @@ static	int	ps_push(t_stack **head_1, t_stack **head_2)
 
 void	push_a(t_stack **head_a, t_stack **head_b)
 {
-	if (ps_push(head_a, head_b) && !PRETTY_PRINT)
-		ft_putstr_fd("pa\n", STDOUT_FILENO);
+	ps_push(head_a, head_b);
 }
 
 void	push_b(t_stack	**head_a, t_stack **head_b)
 {
-	if (ps_push(head_b, head_a) && !PRETTY_PRINT)
-		ft_putstr_fd("pb\n", STDOUT_FILENO);
+	ps_push(head_b, head_a);
 }
