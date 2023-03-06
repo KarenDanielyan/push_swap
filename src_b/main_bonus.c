@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 15:18:15 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/06 16:32:06 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/06 17:02:01 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int	main(int ac, char **av)
 	if (ac != 1)
 	{
 		sig = parse(ac, av, &head_a);
-		sleep(1);
 		if (sig == -1)
 		{
 			ft_putstr_fd(ERROR_MSG, STDERR_FILENO);
@@ -36,11 +35,8 @@ int	main(int ac, char **av)
 		}
 		else
 			checker(&head_a, &head_b);
-		sleep(1);
 		stack_clear(&head_a);
 		stack_clear(&head_b);
 	}
-	sleep(1);
-	system("leaks checker");
 	return (rv);
 }
