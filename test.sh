@@ -1,11 +1,9 @@
 #!/bin/bash
 
-echo -n "Enter number of arguments: "
-read count
-args=$(jot -r $count 0 20000000)
+args=$(ruby -e "puts (1..$1).to_a.shuffle.join(' ')")
 
 instruction_count=$(./push_swap $args | wc -l)
-test_ok=$(./push_swap $args | ./checker $args)
+test_ok=$(./push_swap $args | ./checker_Mac $args)
 
 echo "Number of instructions: $instruction_count
 Is sorted?: $test_ok"

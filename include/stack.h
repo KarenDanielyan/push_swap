@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 20:17:52 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/04 14:40:31 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/07 20:29:20 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-# define ERROR_MSG	"Error\n"
+# define ERROR_MSG_MEM "Fatal Error: Insufficient memory in the heap."
 
 typedef struct s_node
 {
@@ -33,42 +33,48 @@ typedef struct s_node
 *	allocation fails.
 */
 t_stack	*new_stack(void);
+
 /*
 *	Description: Counts the size of the stack.
 */
 int		stack_size(t_stack *head);	
+
 /*
 *	Description: Push element into the stack.
-*
-*	Return Value: 1 on succsessful push, -1 if not.
 */
-int		push(t_stack **head, int value);
+void	push(t_stack **head, int value);
+
 /*
 *	Description: Pop element from the stack.
 *	Does nothing if stack is empty.
 */
 void	pop(t_stack *head);
+
 /*
 *	Description: Empty the stack and free allocated memory for it.
 */
 void	stack_clear(t_stack **head);
+
 /*
 *	Description: Finds a node in a stack that contains `key`.
 *
 *	Return Value: Pointer to the node or NULL if there is none.
 */
 t_stack	*stack_find(t_stack *head, int key);
+
 /*
 *	Description: Returns the deepest node from the stack, or
 *	NULL if empty.
 */
 t_stack	*stack_last(t_stack	*head);
+
 /*
 *	Description: Finds a node in a stack that is under given index.
 *
 *	Return Value: Pointer to the node or NULL if there is none.
 */
 t_stack	*stack_find_ind(t_stack *head, int index);
+
 /*
 *	Description: Return index of the node in the stack.
 *

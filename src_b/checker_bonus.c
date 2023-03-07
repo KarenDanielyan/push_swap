@@ -6,12 +6,35 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 14:27:55 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/06 17:35:47 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/07 20:59:17 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
+#include "push_swap.h"
 #include <libft.h>
+
+#define INSTRUCTIONS "pa pb sa sb ss ra rb rr rra rrb rrr"
+
+static char	*gets(void)
+{
+	char	*to_free;
+	char	*feed;
+
+	to_free = get_next_line(STDIN_FILENO);
+	feed = ft_strtrim(to_free, "\n");
+	free(to_free);
+	return (feed);
+}
+
+static void	instruction_check(char *feed)
+{
+	if (!ft_strnstr(INSTRUCTIONS, feed, ft_strlen(INSTRUCTIONS)))
+	{
+		ft_putstr_fd(ERROR_MSG, STDIN_FILENO);
+		exit(-1);
+	}
+}
 
 static int	is_sorted(t_stack *head)
 {
@@ -32,7 +55,8 @@ void	checker(t_stack **head_a, t_stack **head_b)
 	{
 		while (1)
 		{
-			feed = get_next_line(STDIN_FILENO);
+			feed = gets();
+			instruction_check(feed);
 			if (feed == NULL)
 				break ;
 			execute_push(feed, head_a, head_b);

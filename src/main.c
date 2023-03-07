@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 15:18:15 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/06 17:02:15 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/07 20:37:29 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,23 +29,17 @@
 
 int	main(int ac, char **av)
 {
-	int		rv;
 	t_stack	*head_a;
 	t_stack	*head_b;
-	int		sig;
 
 	head_a = NULL;
 	head_b = NULL;
-	sig = parse(ac, av, &head_a);
-	rv = 0;
-	if (sig == -1)
+	if (ac != 1)
 	{
-		ft_putstr_fd(ERROR_MSG, STDERR_FILENO);
-		rv = -1;
-	}
-	else if (ac != 1)
+		parse(ac, av, &head_a);
 		sort(&head_a, &head_b);
-	stack_clear(&head_a);
-	stack_clear(&head_b);
-	return (rv);
+		stack_clear(&head_a);
+		stack_clear(&head_b);
+	}
+	return (0);
 }

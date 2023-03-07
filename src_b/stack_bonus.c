@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack.c                                            :+:      :+:    :+:   */
+/*   stack_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 14:05:08 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/02/24 15:56:11 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/07 20:35:20 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_stack	*new_stack(void)
 	new = (t_stack *)malloc(sizeof(t_stack));
 	if (!new)
 	{
-		ft_putstr_fd(ERROR_MSG, STDERR_FILENO);
+		ft_putstr_fd(ERROR_MSG_MEM, STDERR_FILENO);
 		return (NULL);
 	}
 	new->value = 0;
@@ -47,7 +47,7 @@ int	stack_size(t_stack	*head)
 	return (size);
 }
 
-int	push(t_stack **head, int value)
+void	push(t_stack **head, int value)
 {
 	t_stack	*to_push;
 
@@ -60,9 +60,12 @@ int	push(t_stack **head, int value)
 		if (*head)
 			(*head)->previous = to_push;
 		(*head) = to_push;
-		return (1);
 	}
-	return (-1);
+	else
+	{
+		ft_putstr_fd(ERROR_MSG_MEM, STDERR_FILENO);
+		exit(-1);
+	}
 }
 
 void	pop(t_stack *head)

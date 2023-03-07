@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 20:52:10 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/05 18:21:28 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/07 20:29:51 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,49 +52,41 @@ static int	ft_strlen_2d(char **s)
 	return (i);
 }
 
-static int	push_args(char **args, t_stack **head)
+static void	push_args(char **args, t_stack **head)
 {
 	int		len;
-	int		sig;
 	long	temp;
 
 	len = ft_strlen_2d(args);
-	sig = 1;
-	while (len-- && sig == 1)
+	while (len--)
 	{
 		if (!is_number(*(args + len)))
 		{
-			sig = -1;
-			break ;
+			ft_putstr_fd(ERROR_MSG, STDERR_FILENO);
+			exit(-1);
 		}
 		temp = ft_atol(*(args + len));
 		if ((temp > INT_MAX || temp < INT_MIN) || stack_find(*head, temp))
 		{
-			sig = -1;
-			break ;
+			ft_putstr_fd(ERROR_MSG, STDERR_FILENO);
+			exit(-1);
 		}
-		sig = push(head, (int)temp);
+		push(head, (int)temp);
 	}
-	return (sig);
 }
 
-int	parse(int ac, char **av, t_stack **head_a)
+void	parse(int ac, char **av, t_stack **head_a)
 {
 	char	**temp;
-	int		sig;
 
-	sig = 1;
 	temp = NULL;
 	while (ac != 1)
 	{
 		temp = ft_split(av[ac - 1], ' ');
 		if (temp)
-			sig = push_args(temp, head_a);
+			push_args(temp, head_a);
 		free_2d(temp);
-		if (sig == -1)
-			break ;
 		ac--;
-	}
+	}	
 	to_index(head_a);
-	return (sig);
 }

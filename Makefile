@@ -10,7 +10,7 @@ SRC			=	./src
 
 SRC_B		=	./src_b
 
-DEP			=	$(wildcard include/*.c) Makefile
+DEP			=	$(wildcard include/*.h) Makefile
 
 SOURCES		=	$(wildcard $(SRC)/*.c)
 
@@ -73,11 +73,11 @@ re:			fclean $(NAME)
 
 bonus:		$(BONUS)
 
-# run:		$(NAME)
-# 			@echo "Is Sorted?:"
-# 			@$(eval ARG=$(shell jot -r $(ARGS) 0 $(ARGS)))
-# 			@./push_swap $(ARG) | ./checker_Mac $(ARG)
-# 			@echo "Instructions:"
-# 			@./push_swap $(ARG) | wc -l
+run:		$(NAME)
+			@echo "Is Sorted?:"
+			@$(eval ARG=$(ruby -e "puts (1..100).to_a.shuffle.join(' ')"))
+			@$(eval ./push_swap $ARG | ./checker_Mac $ARG)
+			@echo "Instructions:"
+			@$(eval ./push_swap $ARG | wc -l)
 
 .PHONY:		all bonus clean fclean re
