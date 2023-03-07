@@ -67,6 +67,7 @@ fclean:		clean
 				@$(MAKE) fclean -C libft
 				@$(MAKE) fclean -C printf
 				@$(RM) $(NAME)
+				@$(RM) $(BONUS)
 				@echo "Done."
 
 re:			fclean $(NAME)
