@@ -1,7 +1,6 @@
 #!/bin/bash
 
-echo -n "Enter Input Numbers: "
-read args
+args=$(ruby -e "puts (1..$1).to_a.shuffle.join(' ')")
 
 instruction_count=$(./push_swap $args | wc -l)
 test_ok=$(./push_swap $args | ./checker_Mac $args)
