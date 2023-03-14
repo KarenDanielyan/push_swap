@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 19:15:38 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/07 18:18:29 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/11 18:10:38 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ static int	swap(t_stack **head)
 		(*head)->previous = s;
 		(*head)->next = s->next;
 		s->previous = NULL;
+		if (s->next)
+			s->next->previous = *head;
 		s->next = *head;
 		*head = s;
 	}

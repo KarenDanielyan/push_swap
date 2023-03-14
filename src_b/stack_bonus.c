@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 14:05:08 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/07 20:35:20 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/14 16:09:33 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	push(t_stack **head, int value)
 	else
 	{
 		ft_putstr_fd(ERROR_MSG_MEM, STDERR_FILENO);
-		exit(-1);
+		exit(EXIT_FAILURE);
 	}
 }
 

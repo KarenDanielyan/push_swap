@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 15:18:15 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/07 21:04:20 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/14 16:04:12 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int	main(int ac, char **av)
 	if (ac != 1)
 	{
 		parse(ac, av, &head_a);
+		if (!head_a)
+			return (0);
 		checker(&head_a, &head_b);
 		stack_clear(&head_a);
 		stack_clear(&head_b);

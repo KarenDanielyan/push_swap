@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 14:27:55 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/07 20:59:17 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/14 16:08:32 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ static void	instruction_check(char *feed)
 {
 	if (!ft_strnstr(INSTRUCTIONS, feed, ft_strlen(INSTRUCTIONS)))
 	{
-		ft_putstr_fd(ERROR_MSG, STDIN_FILENO);
-		exit(-1);
+		ft_putstr_fd(ERROR_MSG, STDERR_FILENO);
+		exit(EXIT_FAILURE);
 	}
 }
 

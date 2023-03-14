@@ -56,7 +56,6 @@ $(BONUS):	$(BUILD) $(OBJS_B)
 				@echo "Build Successfull."
 clean:
 				@echo "Cleaning Build..."
-				@$(RM) $(OBJS)
 				@$(RM) $(BUILD)
 				@$(MAKE) clean -C libft
 				@$(MAKE) clean -C printf

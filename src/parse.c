@@ -6,7 +6,7 @@
 /*   By: kdaniely <kdaniely@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 20:52:10 by kdaniely          #+#    #+#             */
-/*   Updated: 2023/03/07 20:29:51 by kdaniely         ###   ########.fr       */
+/*   Updated: 2023/03/14 16:08:55 by kdaniely         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,13 +63,13 @@ static void	push_args(char **args, t_stack **head)
 		if (!is_number(*(args + len)))
 		{
 			ft_putstr_fd(ERROR_MSG, STDERR_FILENO);
-			exit(-1);
+			exit(EXIT_FAILURE);
 		}
 		temp = ft_atol(*(args + len));
 		if ((temp > INT_MAX || temp < INT_MIN) || stack_find(*head, temp))
 		{
 			ft_putstr_fd(ERROR_MSG, STDERR_FILENO);
-			exit(-1);
+			exit(EXIT_FAILURE);
 		}
 		push(head, (int)temp);
 	}
