@@ -1,5 +1,4 @@
 # Push_swap
-Because swap_push isn’t as natural.
 
 ## Final Grade: [![kdaniely's 42 push_swap Score](https://badge42.vercel.app/api/v2/cldiw2g0k01220fl8ferid3xf/project/2976380)](https://github.com/JaeSeoKim/badge42)
 
