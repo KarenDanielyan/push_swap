@@ -30,54 +30,48 @@ LFLAGS		=	-L./libft -lft -L./printf -lftprintf
 
 IFLAGS		=	-I./include -I./libft -I./printf/include
 
+MGOALS		=	$(if $(filter bonus, $(MAKECMDGOALS)), $(patsubst bonus, all, $(MAKECMDGOALS)), $(MAKECMDGOALS))
+
 $(BUILD)/%.o: $(SRC)/%.c $(DEP)
 				@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
 
 $(BUILD)/%.o: $(SRC_B)/%.c $(DEP)
 				@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
 
-all:		$(NAME)
+all:		libft printf $(NAME)
 
 $(BUILD):
-				@mkdir $(BUILD)
+				@mkdir -p $(BUILD)
 
 $(NAME):	$(BUILD) $(OBJS)
 				@echo	"Building ..."
-				@$(MAKE) -C libft
-				@$(MAKE) -C printf
 				@$(CC) $(CFLAGS) $(OBJS) $(IFLAGS) $(LFLAGS) -o $(NAME)
 				@echo	"Build Successfull."
 
 $(BONUS):	$(BUILD) $(OBJS_B)
 				@echo "Building checker ..."
-				@$(MAKE) -C libft
-				@$(MAKE) -C printf
 				@$(CC) $(CFLAGS) $(OBJS_B) $(IFLAGS) $(LFLAGS) -o $(BONUS)
 				@echo "Build Successfull."
-clean:
+
+libft:
+				@$(MAKE) $(MGOALS) -C libft
+
+printf:
+				@$(MAKE) $(MGOALS) -C printf
+
+clean:			libft printf
 				@echo "Cleaning Build..."
 				@$(RM) $(BUILD)
-				@$(MAKE) clean -C libft
-				@$(MAKE) clean -C printf
 				@echo "Done."
 
-fclean:		clean
+fclean:		libft printf clean
 				@echo "Cleaning Everyting..."
-				@$(MAKE) fclean -C libft
-				@$(MAKE) fclean -C printf
 				@$(RM) $(NAME)
 				@$(RM) $(BONUS)
 				@echo "Done."
 
 re:			fclean $(NAME)
 
-bonus:		$(BONUS)
+bonus:		libft printf $(BONUS)
 
-run:		$(NAME)
-			@echo "Is Sorted?:"
-			@$(eval ARG=$(ruby -e "puts (1..100).to_a.shuffle.join(' ')"))
-			@$(eval ./push_swap $ARG | ./checker_Mac $ARG)
-			@echo "Instructions:"
-			@$(eval ./push_swap $ARG | wc -l)
-
-.PHONY:		all bonus clean fclean re
+.PHONY:		all bonus clean fclean re libft printf
